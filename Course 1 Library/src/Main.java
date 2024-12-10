@@ -2,7 +2,7 @@ public class Main {
 
     public static void main(String[] args) {
 
-        Library.printAvailableBooks();
+
         System.out.println("-------------------------------------------------");
 
         Book book1 = Library.getBookByTitle("1984");

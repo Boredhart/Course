@@ -12,6 +12,8 @@ public class Library {
         addBook(book1);
         addBook(book2);
         addBook(book3);
+
+        printAvailableBooks();
     }
 
     public static void addBook(Book book) {
