@@ -8,7 +8,7 @@ public class Book {
         this.title = title;
         this.author = author;
         this.year = year;
-        this.isAvailable = true;
+        this.isAvailable = isAvailable;
     }
 
     public Book(String title, String author) {

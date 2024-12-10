@@ -3,7 +3,18 @@ public class Library {
     private static Book[] books = new Book[100];
     private static int bookCount = 0;
 
-    static void addBook(Book book) {
+
+    static {
+        Book book1 = new Book("1984", "George Orwell", 1949, true);
+        Book book2 = new Book("Animal Farm", "George Orwell", 1945, true);
+        Book book3 = new Book("To Kill a Mockingbird", "Harper Lee");
+
+        addBook(book1);
+        addBook(book2);
+        addBook(book3);
+    }
+
+    public static void addBook(Book book) {
         if (bookCount < books.length) {
             books[bookCount] = book;
             bookCount++;
@@ -13,7 +24,7 @@ public class Library {
         }
     }
 
-    static void printAvailableBooks() {
+    public static void printAvailableBooks() {
         for (int i = 0; i < bookCount; i++) {
             Book book = books[i];
             if (book.isAvailable()) {
@@ -23,7 +34,7 @@ public class Library {
         }
     }
 
-    static void findBooksByAuthor(String author) {
+    public static void findBooksByAuthor(String author) {
         for (int i = 0; i < bookCount; i++) {
             Book book = books[i];
             if (book.getAuthor().equalsIgnoreCase(author)) {
@@ -31,5 +42,14 @@ public class Library {
                 System.out.println();
             }
         }
+    }
+
+    public static Book getBookByTitle(String title) {
+        for (int i = 0; i < bookCount; i++) {
+            if (books[i].getTitle().equalsIgnoreCase(title)) {
+                return books[i];
+            }
+        }
+        return null;
     }
 }
