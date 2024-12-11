@@ -46,13 +46,4 @@ public class Library {
             }
         }
     }
-
-    public Book getBookByTitle(String title) {
-        for (int i = 0; i < bookCount; i++) {
-            if (books[i].getTitle().equalsIgnoreCase(title)) {
-                return books[i];
-            }
-        }
-        return null;
-    }
 }
