@@ -3,16 +3,20 @@ public class Main {
     public static void main(String[] args) {
 
 
+        Library repo = new Library();
+        Book book1 = new Book("If We Were Villains", "Rio");
 
-        Book book1 = Library.getBookByTitle("1984");
-        if (book1 != null) {
-            book1.borrowBook();
-        }
+        repo.addBook(book1);
         System.out.println("-------------------------------------------------");
 
-        Library.printAvailableBooks();
+        repo.printAvailableBooks();
         System.out.println("-------------------------------------------------");
 
-        Library.findBooksByAuthor("George Orwell");
+        book1.borrowBook();
+
+        repo.printAvailableBooks();
+        System.out.println("-------------------------------------------------");
+
+        repo.findBooksByAuthor("George Orwell");
     }
 }
